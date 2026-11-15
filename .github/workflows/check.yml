@@ -1,0 +1,46 @@
+name: Check entries
+
+# Every pull request: the entries' fields, then each file downloaded, its size and sha256 checked,
+# and run through LibreShard's own install checks (a checkout of the app at the ref below). Shard
+# code never runs: LibreShard only reads the manifest and the archive. No secrets, read-only.
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: check-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    name: Check entries
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          repository: libreshard/libreshard
+          ref: main
+          path: libreshard
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 24
+      - name: Linux libraries for nut-js
+        run: sudo apt-get update && sudo apt-get install -y libxtst6
+      - name: LibreShard's dependencies
+        working-directory: libreshard
+        env:
+          ELECTRON_SKIP_BINARY_DOWNLOAD: '1'
+        run: npm ci
+      - name: Check
+        env:
+          LIBRESHARD_DIR: libreshard
+        run: node tools/check.mjs --download
