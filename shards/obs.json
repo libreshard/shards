@@ -1,0 +1,19 @@
+{
+  "id": "obs",
+  "name": "Stream Control",
+  "author": "LibreShard",
+  "description": "Record, stream, save replays, mute audio and switch scenes in OBS Studio, with any app in front",
+  "icon": "🎬",
+  "version": "1.1.1",
+  "minAppVersion": "0.5.1",
+  "license": "Apache-2.0",
+  "url": "https://github.com/libreshard/gallery-shards/tree/main/obs",
+  "tags": ["streaming"],
+  "screenshot": "screenshots/obs.png",
+  "keys": ["ctrl+shift+f18","ctrl+shift+f19","ctrl+shift+f20","ctrl+shift+f21","ctrl+shift+f22","shift+alt+f13","shift+alt+f14","shift+alt+f15","shift+alt+f16","shift+alt+f17","shift+alt+f18","ctrl+shift+f7","ctrl+shift+f8","ctrl+shift+f9","ctrl+shift+f10","ctrl+shift+f11","shift+alt+f1","shift+alt+f3","shift+alt+f5","shift+alt+f9","shift+alt+f11","shift+alt+f12"],
+  "download": {
+    "url": "https://github.com/libreshard/gallery-shards/releases/download/obs-v1.1.1/obs-1.1.1.libreshard",
+    "sha256": "8ca4e834407dec24471085afdf934ed5b9bf369b6f7e68e1dde26e06c1f6b9b2",
+    "size": 16407
+  }
+}
