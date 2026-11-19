@@ -1,0 +1,20 @@
+{
+  "id": "edicion-imagen",
+  "name": "Image editing",
+  "author": "LibreShard",
+  "description": "Tools, brush size, zoom, undo and save for Photoshop, Affinity Photo, Krita or GIMP",
+  "icon": "🎨",
+  "version": "1.1.1",
+  "minAppVersion": "0.5.1",
+  "license": "Apache-2.0",
+  "url": "https://github.com/libreshard/gallery-shards/tree/main/edicion-imagen",
+  "tags": ["creative"],
+  "screenshot": "screenshots/edicion-imagen.png",
+  "keys": ["b","e","v","l","i","t","p","m","f","o","shift+e","lbracket","rbracket","ctrl+minus","ctrl+equal","numpadminus","numpadplus","ctrl+z","ctrl+shift+z","ctrl+y","ctrl+s","space","alt","ctrl"],
+  "apps": ["photoshop","affinity","krita","gimp"],
+  "download": {
+    "url": "https://github.com/libreshard/gallery-shards/releases/download/edicion-imagen-v1.1.1/edicion-imagen-1.1.1.libreshard",
+    "sha256": "33965f4a7ec1dd378ab57b8fafb2533517bcb27ed50f96e2596586842bcea121",
+    "size": 15018
+  }
+}
